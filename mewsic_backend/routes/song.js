@@ -42,10 +42,10 @@ router.get(
 
 //Get All Songs by an Artist (Use ID)
 router.get(
-  "/get/artist",
+  "/get/artist/:artistId",
   passport.authenticate(("jwt", { session: false })),
   async (req, res) => {
-    const { artistId } = req.body;
+    const { artistId } = req.params;
     //Check if the artist exists first of all
     const artist = await User.find({ _id: artistId });
     if (!artist) {
@@ -60,10 +60,10 @@ router.get(
 //Get a Single Song
 
 router.get(
-  "/get/name",
+  "/get/songname/:songName",
   passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    const { songName } = req.body;
+    const { songName } = req.params;
     //Check if the artist exists first of all
     const songExist = await Song.find({ name: songName });
     if (!songExist) {
@@ -74,4 +74,5 @@ router.get(
     return res.status(200).json({ data: songs });
   }
 );
+
 module.exports = router;
