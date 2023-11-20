@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const { getToken } = require("../utils/helpers");
+//THIS IS A SAMPLE CHANGE
 
 // This POST route will help to register a user
 router.post("/register", async (req, res) => {
