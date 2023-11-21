@@ -18,7 +18,7 @@ const LoginComponent = () => {
             "/auth/login",
             data
         );
-        if (response && !response.err) {
+        if (response && !response.error) {
             const token = response.token;
             const date = new Date();
             date.setDate(date.getDate() + 30);
