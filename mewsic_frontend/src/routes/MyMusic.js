@@ -22,8 +22,8 @@ const MyMusic = () => {
                 My Songs
             </div>
             <div className="space-y-3 overflow-auto">
-                {songData.map((item) => {
-                    return <SingleSongCard info={item} playSound={() => {}} />;
+                {songData.map((item,index) => {
+                    return <SingleSongCard key={index} info={item} playSound={() => {}} />;
                 })}
             </div>
         </LoggedInContainer>
