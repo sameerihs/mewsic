@@ -152,9 +152,10 @@ const PlaylistView = ({titleText, cardsData}) => {
             <div className="w-full flex justify-between space-x-4">
                 {
                     // cardsData will be an array
-                    cardsData.map((item) => {
+                    cardsData.map((item,index) => {
                         return (
                             <Card
+                                key = {index}
                                 title={item.title}
                                 description={item.description}
                                 imgUrl={item.imgUrl}
