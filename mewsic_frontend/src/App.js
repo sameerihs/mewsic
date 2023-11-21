@@ -41,7 +41,7 @@ function App() {
                                 element={<LoggedInHomeComponent />}
                             />
                             <Route
-                                path="/uploadSong"
+                                path="/UploadSong"
                                 element={<UploadSong />}
                             />
                             <Route path="/myMusic" element={<MyMusic />} />
