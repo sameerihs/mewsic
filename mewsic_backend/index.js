@@ -2,16 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const User = require("./models/User");
-
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
 const playlistRoutes = require("./routes/playlist");
+const cors = require("cors");
 
 var JwtStrategy = require("passport-jwt").Strategy,
   ExtractJwt = require("passport-jwt").ExtractJwt;
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 const port = 8080;
 app.use(express.json());
 console.log(process.env);
@@ -54,7 +55,6 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoutes);
 app.use("/song", songRoutes);
 app.use("/playlist", playlistRoutes);
-
 app.listen(port, () => {
   console.log("App is running on port" + port);
 });
