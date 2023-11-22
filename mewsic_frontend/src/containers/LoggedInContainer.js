@@ -1,7 +1,8 @@
 import { useContext, useState, useLayoutEffect, useRef } from "react";
 import { Howl, Howler } from "howler";
 import { Icon } from "@iconify/react";
-import spotify_logo from "../assets/images/spotify_logo_white.svg";
+// import spotify_logo from "../assets/images/spotify_logo_white.svg";
+import mewsic_logo from "../assets/images/mewsic_logo.svg";
 import IconText from "../components/shared/IconText";
 import TextWithHover from "../components/shared/TextWithHover";
 import songContext from "../contexts/songContext";
@@ -108,7 +109,7 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
           <div>
             {/* This div is for logo */}
             <div className="logoDiv p-6">
-              <img src={spotify_logo} alt="spotify logo" width={125} />
+              <img src={mewsic_logo} alt="mewsic logo" width={125} />
             </div>
             <div className="py-5">
               <IconText
@@ -165,13 +166,14 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
                 <TextWithHover displayText={"Premium"} />
                 <TextWithHover displayText={"Support"} />
                 <TextWithHover displayText={"Download"} />
-                <div className="h-1/2 border-r border-white"></div>
+                <div className="h-1/2 border-r border-indigo-300"></div>
               </div>
               <div className="w-1/3 flex justify-around h-full items-center">
                 <TextWithHover displayText={"Upload Song"} />
-                <div className="bg-white w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
+                <div className="bg-indigo-300 w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
                   AC
                 </div>
+                <h5></h5>
               </div>
             </div>
           </div>
