@@ -20,7 +20,7 @@ const LoginComponent = () => {
       const date = new Date();
       date.setDate(date.getDate() + 30);
       setCookie("token", token, { path: "/", expires: date });
-      alert("Success");
+
       navigate("/home");
     } else {
       alert("Failure");

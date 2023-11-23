@@ -163,13 +163,19 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
           <div className="navbar w-full h-1/10 bg-black bg-opacity-30 flex items-center justify-end">
             <div className="w-1/2 flex h-full">
               <div className="w-2/3 flex justify-around items-center">
-                <TextWithHover displayText={"Premium"} />
+                {/* <TextWithHover displayText={"Premium"} />
                 <TextWithHover displayText={"Support"} />
-                <TextWithHover displayText={"Download"} />
-                <div className="h-1/2 border-r border-indigo-300"></div>
+                <TextWithHover displayText={"Download"} /> */}
+                {/* <div className="h-1/2 border-r border-indigo-300"></div> */}
               </div>
-              <div className="w-1/3 flex justify-around h-full items-center">
-                <TextWithHover displayText={"Upload Song"} />
+              <div className="w-1/2 flex justify-around h-full items-center">
+                <IconText
+                  // iconName={"material-symbols:library-music-sharp"}
+                  displayText={"Upload Song"}
+                  targetLink="/UploadSong"
+                  active={curActiveScreen === "UploadSong"}
+                />
+                {/* <TextWithHover displayText={"Upload Song"} /> */}
                 <div className="bg-indigo-300 w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
                   AC
                 </div>
