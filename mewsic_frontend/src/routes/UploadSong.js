@@ -6,6 +6,7 @@ import IconText from "../components/shared/IconText";
 import TextInput from "../components/shared/TextInput";
 import TextWithHover from "../components/shared/TextWithHover";
 import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
+
 import { useNavigate } from "react-router-dom";
 
 const UploadSong = () => {
@@ -16,7 +17,11 @@ const UploadSong = () => {
   const navigate = useNavigate();
 
   const submitSong = async () => {
-    const data = { name, thumbnail, track: playlistUrl };
+    const data = {
+      name,
+      thumbnail,
+      track: playlistUrl,
+    };
     const response = await makeAuthenticatedPOSTRequest("/song/create", data);
     if (response.err) {
       alert("Could not create song");

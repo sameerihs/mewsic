@@ -15,7 +15,9 @@ const LoginComponent = () => {
   const login = async () => {
     const data = { email, password };
     const response = await makeUnauthenticatedPOSTRequest("/auth/login", data);
+
     if (response && !response.error) {
+      console.log(response._id);
       const token = response.token;
       const date = new Date();
       date.setDate(date.getDate() + 30);

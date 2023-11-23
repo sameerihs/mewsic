@@ -209,11 +209,11 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
           <div className="w-1/2 flex justify-center h-full flex-col items-center">
             <div className="flex w-1/3 justify-between items-center">
               {/* controls for the playing song go here */}
-              <Icon
+              {/* <Icon
                 icon="ph:shuffle-fill"
                 fontSize={30}
                 className="cursor-pointer text-gray-500 hover:text-white"
-              />
+              /> */}
               <Icon
                 icon="mdi:skip-previous-outline"
                 fontSize={30}
@@ -234,11 +234,11 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
                 fontSize={30}
                 className="cursor-pointer text-gray-500 hover:text-white"
               />
-              <Icon
+              {/* <Icon
                 icon="ic:twotone-repeat"
                 fontSize={30}
                 className="cursor-pointer text-gray-500 hover:text-white"
-              />
+              /> */}
             </div>
             {/* <div>Progress Bar Here</div> */}
           </div>
