@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import songContext from "../../contexts/songContext";
 
-const SingleSongCard = ({ info, playSound }) => {
+const TrendingCard = ({ info, playSound }) => {
   const { currentSong, setCurrentSong } = useContext(songContext);
 
   return (
@@ -29,4 +29,4 @@ const SingleSongCard = ({ info, playSound }) => {
   );
 };
 
-export default SingleSongCard;
+export default TrendingCard;

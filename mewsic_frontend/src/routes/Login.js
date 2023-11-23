@@ -5,6 +5,7 @@ import PasswordInput from "../components/shared/PasswordInput";
 import { Link, useNavigate } from "react-router-dom";
 import { makeUnauthenticatedPOSTRequest } from "../utils/serverHelpers";
 import { useCookies } from "react-cookie";
+import mewsic_logo from "../assets/images/mewsic_logo.svg";
 
 const LoginComponent = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,7 @@ const LoginComponent = () => {
     const response = await makeUnauthenticatedPOSTRequest("/auth/login", data);
 
     if (response && !response.error) {
-      console.log(response._id);
+      // console.log(response._id);
       const token = response.token;
       const date = new Date();
       date.setDate(date.getDate() + 30);
@@ -31,8 +32,8 @@ const LoginComponent = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
-        <Icon icon="logos:spotify" width="150" />
+      <div className="logoDiv p-6">
+        <img src={mewsic_logo} alt="mewsic logo" width={125} />
       </div>
       <div className="inputRegion w-1/3 py-10 flex items-center justify-center flex-col">
         {/*  I will have my 2 inputs(email and password) and I will have my sign up instead button*/}

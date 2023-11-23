@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Howl, Howler } from "howler";
-import { Icon } from "@iconify/react";
-import mewsic_logo from "../assets/images/mewsic_logo.svg";
-import IconText from "../components/shared/IconText";
-import TextWithHover from "../components/shared/TextWithHover";
+// import { useState } from "react";
+// import { Howl, Howler } from "howler";
+// import { Icon } from "@iconify/react";
+// import mewsic_logo from "../assets/images/mewsic_logo.svg";
+// import IconText from "../components/shared/IconText";
+// import TextWithHover from "../components/shared/TextWithHover";
 import LoggedInContainer from "../containers/LoggedInContainer";
 
 const focusCardsData = [
@@ -77,7 +77,7 @@ const Home = () => {
     <LoggedInContainer curActiveScreen="home">
       <PlaylistView titleText="Focus" cardsData={focusCardsData} />
       <PlaylistView
-        titleText="Spotify Playlists"
+        titleText="Mewsic Playlists"
         cardsData={spotifyPlaylistsCardData}
       />
       <PlaylistView titleText="Sound of India" cardsData={focusCardsData} />
