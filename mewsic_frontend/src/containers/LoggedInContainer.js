@@ -256,7 +256,7 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
                     : "ic:baseline-pause-circle"
                 }
                 fontSize={50}
-                className="cursor-pointer text-gray-500 hover:text-white"
+                className="cursor-pointer text-gray-200 hover:text-white"
                 onClick={togglePlayPause}
               />
               <Icon

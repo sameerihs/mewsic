@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import SingleSongCard from "../components/shared/SingleSongCard";
 import { makeAuthenticatedGETRequest } from "../utils/serverHelpers";
 import LoggedInContainer from "../containers/LoggedInContainer";
+import TrendingCard from "../components/shared/TrendingCard";
 
 const MyMusic = () => {
   const [songData, setSongData] = useState([]);

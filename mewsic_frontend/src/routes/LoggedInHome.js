@@ -5,6 +5,7 @@
 // import IconText from "../components/shared/IconText";
 // import TextWithHover from "../components/shared/TextWithHover";
 import LoggedInContainer from "../containers/LoggedInContainer";
+import TrendingCard from "../components/shared/TrendingCard";
 
 const focusCardsData = [
   {
@@ -75,6 +76,8 @@ const spotifyPlaylistsCardData = [
 const Home = () => {
   return (
     <LoggedInContainer curActiveScreen="home">
+      {/* <TrendingCard /> */}
+
       <PlaylistView titleText="Focus" cardsData={focusCardsData} />
       <PlaylistView
         titleText="Mewsic Playlists"
@@ -110,9 +113,9 @@ const PlaylistView = ({ titleText, cardsData }) => {
 
 const Card = ({ title, description, imgUrl }) => {
   return (
-    <div className="bg-black bg-opacity-40 w-1/5 p-4 rounded-lg">
+    <div className="bg-transparent bg-opacity-40 w-1/5 p-4 rounded-lg">
       <div className="pb-4 pt-2">
-        <img className="w-full rounded-md" src={imgUrl} alt="label" />
+        <img className="w-full rounded-lg" src={imgUrl} alt="label" />
       </div>
       <div className="text-white font-semibold py-3">{title}</div>
       <div className="text-gray-500 text-sm">{description}</div>
