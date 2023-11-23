@@ -9,10 +9,10 @@ import TrendingCard from "../components/shared/TrendingCard";
 
 const focusCardsData = [
   {
-    title: "Peaceful Piano",
+    title: "Fall Music",
     description: "Relax and indulge with beautiful piano pieces",
     imgUrl:
-      "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1546&q=80",
+      "https://is1-ssl.mzstatic.com/image/thumb/Features125/v4/c4/07/2b/c4072b5c-a792-5955-7998-084cfbc845e7/U0MtTVMtV1ctQ2hlZnNfS2lzcy1BREFNX0lEPTE1MzU4Mjc0NTgucG5n.png/592x592SC.DN01.webp?l=en-US",
   },
   {
     title: "Deep Focus",
@@ -83,7 +83,7 @@ const Home = () => {
         titleText="Mewsic Playlists"
         cardsData={spotifyPlaylistsCardData}
       />
-      <PlaylistView titleText="Sound of India" cardsData={focusCardsData} />
+      <PlaylistView titleText="Music by Mood" cardsData={focusCardsData} />
     </LoggedInContainer>
   );
 };
