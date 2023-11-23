@@ -13,7 +13,20 @@ import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
 const LoggedInContainer = ({ children, curActiveScreen }) => {
   const [createPlaylistModalOpen, setCreatePlaylistModalOpen] = useState(false);
   const [addToPlaylistModalOpen, setAddToPlaylistModalOpen] = useState(false);
+  const clearAllCookies = () => {
+    document.cookie.split(";").forEach((cookie) => {
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+    });
+  };
 
+  // Event handler for the button click
+  const handleClearCookies = () => {
+    clearAllCookies();
+    // Optional: Display an alert or perform any other actions after clearing cookies
+    alert("Successfully Logged Out");
+  };
   const {
     currentSong,
     setCurrentSong,
@@ -152,10 +165,18 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
             </div>
           </div>
           <div className="px-5">
-            <div className="border border-gray-100 text-white w-2/5 flex px-2 py-1 rounded-full items-center justify-center hover:border-white cursor-pointer">
-              <Icon icon="carbon:earth-europe-africa" />
-              <div className="ml-2 text-sm font-semibold">English</div>
-            </div>
+            <button
+              id="clearCookiesButton"
+              className="border border-gray-100 text-white w-2/5 flex px-2 py-1 rounded-full items-center justify-center hover:border-white cursor-pointer"
+              onClick={handleClearCookies}
+            >
+              <Icon
+                icon="material-symbols:logout-rounded"
+                width="30"
+                height="30"
+              />
+              <div className="ml-2 text-sm font-semibold">Logout</div>
+            </button>
           </div>
         </div>
         {/* This second div will be the right part(main content) */}
@@ -169,12 +190,20 @@ const LoggedInContainer = ({ children, curActiveScreen }) => {
                 {/* <div className="h-1/2 border-r border-indigo-300"></div> */}
               </div>
               <div className="w-1/2 flex justify-around h-full items-center">
-                <IconText
-                  // iconName={"material-symbols:library-music-sharp"}
-                  displayText={"Upload Song"}
-                  targetLink="/UploadSong"
-                  active={curActiveScreen === "UploadSong"}
-                />
+                <div className="border border-white rounded-full px-2 py-1 text-gray-300">
+                  <button
+                    className={`${
+                      curActiveScreen === "UploadSong" ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      // Add your functionality here
+                      // For example, navigate to the UploadSong page
+                      window.location.href = "/UploadSong";
+                    }}
+                  >
+                    Upload Song
+                  </button>
+                </div>
                 {/* <TextWithHover displayText={"Upload Song"} /> */}
                 <div className="bg-indigo-300 w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
                   AC
