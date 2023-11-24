@@ -68,4 +68,31 @@ router.get(
   }
 );
 
+router.delete(
+  "/delete/:songId",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    const { songId } = req.params;
+
+    try {
+      const deletedSong = await Song.findOneAndDelete({
+        _id: songId,
+        artist: req.user._id, // Ensuring only the artist who created the song can delete it
+      });
+
+      if (!deletedSong) {
+        return res
+          .status(404)
+          .json({ err: "Song not found or unauthorized to delete." });
+      }
+
+      return res
+        .status(200)
+        .json({ message: "Song deleted successfully", data: deletedSong });
+    } catch (err) {
+      return res.status(500).json({ err: "Internal server error" });
+    }
+  }
+);
+
 module.exports = router;
