@@ -1,8 +1,21 @@
 import { useContext } from "react";
 import songContext from "../../contexts/songContext";
 import { Icon } from "@iconify/react";
+import axios from "axios";
+
 const SingleSongCard = ({ info, playSound }) => {
   const { currentSong, setCurrentSong } = useContext(songContext);
+
+  const deleteSong = async (songId) => {
+    try {
+      const response = await axios.delete(`/delete/${songId}`);
+      console.log(response.data.message); // Optional: Log the response message
+      // Perform any additional actions after successful deletion
+    } catch (error) {
+      console.error(error);
+      // Handle error cases
+    }
+  };
 
   return (
     <div
@@ -22,7 +35,7 @@ const SingleSongCard = ({ info, playSound }) => {
           <div className="cursor-pointer hover:underline">{info.name}</div>
         </div>
         <div className="w-1/6 flex items-center justify-center text-gray-400 text-sm">
-          <div className="px-5">
+          <div className="px-5" onClick={() => deleteSong(info.songId)}>
             <Icon icon="iwwa:delete" width="30" height="30" />
           </div>
         </div>
