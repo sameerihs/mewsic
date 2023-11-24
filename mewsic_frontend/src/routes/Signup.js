@@ -46,7 +46,7 @@ const SignupComponent = () => {
         <div className="logoDiv p-6 ">
           <img src={mewsic_logo} alt="mewsic logo" width={125} />
         </div>
-        <div className="inputRegion flex items-center justify-center flex-col">
+        <div className="w-full inputRegion flex items-center justify-center flex-col p-2">
           {/*  I will have my 2 inputs(email and password) and I will have my sign up instead button*/}
           <div className="font-bold mb-4 text-2xl text-white">
             Sign up for free to start listening.
@@ -78,21 +78,25 @@ const SignupComponent = () => {
             value={password}
             setValue={setPassword}
           />
-          <div className="w-full flex justify-between items-center space-x-8">
-            <TextInput
-              label="First Name"
-              placeholder="First Name"
-              className="my-6"
-              value={firstName}
-              setValue={setFirstName}
-            />
-            <TextInput
-              label="Last Name"
-              placeholder="Last Name"
-              className="my-6"
-              value={lastName}
-              setValue={setLastName}
-            />
+          <div className="w-full flex flex-wrap items-center justify-between ">
+            <div>
+              <TextInput
+                label="First Name"
+                placeholder="First Name"
+                className="my-6"
+                value={firstName}
+                setValue={setFirstName}
+              />
+            </div>
+            <div>
+              <TextInput
+                label="Last Name"
+                placeholder="Last Name"
+                className="my-6"
+                value={lastName}
+                setValue={setLastName}
+              />
+            </div>
           </div>
           <div className=" w-full flex items-center justify-center     my-8">
             <button
